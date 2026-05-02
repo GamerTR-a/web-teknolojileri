@@ -127,6 +127,15 @@ body {
     box-shadow: 0 12px 35px rgba(0,0,0,0.15);
 }
 
+.hover-lift {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(13, 59, 110, 0.15) !important;
+}
+
 /* ==============================
    CV Page – Timeline
    ============================== */
