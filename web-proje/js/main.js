@@ -1,76 +1,148 @@
 /* ============================================================
-   main.js – Vanilla JavaScript Contact Form Validation
+   main.js – Portfolio JavaScript
    ============================================================ */
 
+/* ---- Navbar scroll effect ---- */
+(function initNavbar() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    const update = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+})();
+
+/* ---- Back to Top button ---- */
+(function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 420);
+    }, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+/* ---- Scroll reveal (Intersection Observer) ---- */
+(function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+
+/* ---- Skill bar animation ---- */
+(function initSkillBars() {
+    const bars = document.querySelectorAll('.skill-fill');
+    if (!bars.length) return;
+
+    bars.forEach(bar => {
+        const target = bar.style.width || '0%';
+        bar.dataset.targetWidth = target;
+        bar.style.width = '0%';
+        bar.style.transition = 'none';
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                bar.style.transition = '';
+            });
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.width = entry.target.dataset.targetWidth;
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    bars.forEach(bar => observer.observe(bar));
+})();
+
+/* ---- Counter animation ---- */
+(function initCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.dataset.count, 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1800;
+            const start = performance.now();
+
+            const update = (now) => {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target) + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+            observer.unobserve(el);
+        });
+    }, { threshold: 0.6 });
+
+    counters.forEach(c => observer.observe(c));
+})();
+
+/* ---- Active nav auto-highlight ---- */
+(function initActiveNav() {
+    const current = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        if (href === current) {
+            document.querySelectorAll('.navbar-nav .nav-link.active').forEach(a => a.classList.remove('active'));
+            link.classList.add('active');
+        }
+    });
+})();
+
+/* ============================================================
+   Contact Form – Vanilla JS Validation
+   ============================================================ */
 function validateWithJS() {
     const errors = [];
 
-    // Ad Soyad
     const name = (document.getElementById('fieldName') || {}).value || '';
-    if (!name.trim()) {
-        errors.push('Ad Soyad boş bırakılamaz.');
-    } else if (name.trim().length < 3) {
-        errors.push('Ad Soyad en az 3 karakter olmalıdır.');
-    }
+    if (!name.trim()) errors.push('Ad Soyad boş bırakılamaz.');
+    else if (name.trim().length < 3) errors.push('Ad Soyad en az 3 karakter olmalıdır.');
 
-    // E-posta
     const email = (document.getElementById('fieldEmail') || {}).value || '';
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.trim()) {
-        errors.push('E-posta adresi boş bırakılamaz.');
-    } else if (!emailRegex.test(email.trim())) {
-        errors.push('Geçerli bir e-posta adresi giriniz. (örn: isim@domain.com)');
-    }
+    if (!email.trim()) errors.push('E-posta adresi boş bırakılamaz.');
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) errors.push('Geçerli bir e-posta adresi giriniz. (örn: isim@domain.com)');
 
-    // Telefon
     const phone = (document.getElementById('fieldPhone') || {}).value || '';
     const phoneClean = phone.replace(/[\s\-\(\)]/g, '');
-    if (!phoneClean) {
-        errors.push('Telefon numarası boş bırakılamaz.');
-    } else if (!/^\d{10,11}$/.test(phoneClean)) {
-        errors.push('Telefon numarası sadece rakamlardan oluşmalı ve 10-11 haneli olmalıdır.');
-    }
+    if (!phoneClean) errors.push('Telefon numarası boş bırakılamaz.');
+    else if (!/^\d{10,11}$/.test(phoneClean)) errors.push('Telefon numarası sadece rakamlardan oluşmalı ve 10-11 haneli olmalıdır.');
 
-    // Konu
     const subject = (document.getElementById('fieldSubject') || {}).value || '';
-    if (!subject.trim()) {
-        errors.push('Konu boş bırakılamaz.');
-    }
+    if (!subject.trim()) errors.push('Konu boş bırakılamaz.');
 
-    // Mesaj
     const message = (document.getElementById('fieldMessage') || {}).value || '';
-    if (!message.trim()) {
-        errors.push('Mesaj boş bırakılamaz.');
-    } else if (message.trim().length < 20) {
-        errors.push('Mesaj en az 20 karakter olmalıdır.');
-    }
+    if (!message.trim()) errors.push('Mesaj boş bırakılamaz.');
+    else if (message.trim().length < 20) errors.push('Mesaj en az 20 karakter olmalıdır.');
 
-    // Cinsiyet (radio)
-    const genderInputs = document.querySelectorAll('input[name="gender"]');
-    const genderChecked = Array.from(genderInputs).some(r => r.checked);
-    if (!genderChecked) {
-        errors.push('Cinsiyet seçiniz.');
-    }
+    const genderChecked = Array.from(document.querySelectorAll('input[name="gender"]')).some(r => r.checked);
+    if (!genderChecked) errors.push('Cinsiyet seçiniz.');
 
-    // Eğitim (select)
     const education = (document.getElementById('fieldEducation') || {}).value || '';
-    if (!education) {
-        errors.push('Eğitim düzeyi seçiniz.');
-    }
+    if (!education) errors.push('Eğitim düzeyi seçiniz.');
 
-    // İlgi Alanları (checkbox)
     const interests = document.querySelectorAll('input[name="interests[]"]:checked');
-    if (interests.length === 0) {
-        errors.push('En az bir ilgi alanı seçiniz.');
-    }
+    if (interests.length === 0) errors.push('En az bir ilgi alanı seçiniz.');
 
-    // Doğum Tarihi
     const birthdate = (document.getElementById('fieldBirthdate') || {}).value || '';
-    if (!birthdate) {
-        errors.push('Doğum tarihi giriniz.');
-    }
+    if (!birthdate) errors.push('Doğum tarihi giriniz.');
 
-    // Sonuçları Göster
     const box = document.getElementById('jsErrorBox');
     const list = document.getElementById('jsErrorList');
     const successBox = document.getElementById('jsSuccessBox');
@@ -90,7 +162,7 @@ function validateWithJS() {
 }
 
 /* ============================================================
-   Login Page – Client-side JS Validation
+   Login Page – Client-side Validation
    ============================================================ */
 function validateLogin() {
     const emailInput = document.getElementById('loginEmail');

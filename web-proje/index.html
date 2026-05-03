@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımda</title>
+    <title>Portfolyo | Hakkımda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -38,17 +38,23 @@
     <!-- HERO -->
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center gy-4">
-                <div class="col-md-3 text-center">
+            <div class="row align-items-center gy-5">
+                <div class="col-md-3 text-center reveal">
                     <img src="https://picsum.photos/200/200?random=1" alt="Profil Fotoğrafı" class="profile-photo">
                 </div>
-                <div class="col-md-9">
-                    <p class="mb-1" style="color:var(--accent); font-weight:600; letter-spacing: 1px;">Merhaba, ben</p>
-                    <h1 class="display-4 fw-bolder">Alex Developer</h1>
-                    <p class="lead mt-2">Teknoloji Üniversitesi – Bilgisayar Mühendisliği – 3. Sınıf</p>
-                    <p class="mt-3 opacity-75 fs-5">
-                        Modern web teknolojileri ve kullanıcı deneyimi odaklı arayüzler tasarlayan, 
-                        sürekli öğrenmeye açık bir yazılım geliştiriciyim. Açık kaynak projelere katkıda bulunmayı ve karmaşık problemleri çözmeyi seviyorum.
+                <div class="col-md-9 reveal reveal-delay-1">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="hero-badge"><i class="bi bi-mortarboard"></i> Bilgisayar Mühendisliği</span>
+                        <span class="hero-badge"><i class="bi bi-geo-alt"></i> İstanbul</span>
+                        <span class="hero-badge"><i class="bi bi-code-slash"></i> Full Stack</span>
+                    </div>
+                    <p class="mb-1" style="color:var(--accent); font-weight:600; letter-spacing: 1px; font-size:0.9rem;">Merhaba, ben</p>
+                    <h1 class="display-4 fw-bolder mb-2">Alex Developer</h1>
+                    <p class="lead mt-1">Teknoloji Üniversitesi – Bilgisayar Mühendisliği – 3. Sınıf</p>
+                    <p class="mt-3 opacity-75 fs-6" style="max-width:600px; line-height:1.8;">
+                        Modern web teknolojileri ve kullanıcı deneyimi odaklı arayüzler tasarlayan,
+                        sürekli öğrenmeye açık bir yazılım geliştiriciyim. Açık kaynak projelere katkıda bulunmayı
+                        ve karmaşık problemleri çözmeyi seviyorum.
                     </p>
                     <div class="mt-4 d-flex flex-wrap gap-3">
                         <a href="cv.html" class="btn btn-warning fw-semibold px-4 py-2 rounded-pill shadow-sm">
@@ -66,47 +72,81 @@
         </div>
     </section>
 
+    <!-- STATS -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-count="6" data-suffix="+">0+</span>
+                        <p class="stat-label">Tamamlanan Proje</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal reveal-delay-1">
+                        <span class="stat-number" data-count="10" data-suffix="+">0+</span>
+                        <p class="stat-label">Öğrenilen Teknoloji</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal reveal-delay-2">
+                        <span class="stat-number" data-count="500" data-suffix="+">0+</span>
+                        <p class="stat-label">GitHub Commit</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal reveal-delay-3">
+                        <span class="stat-number" data-count="3">0</span>
+                        <p class="stat-label">Yıl Aktif Geliştirme</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- HAKKIMDA -->
     <section class="py-5">
         <div class="container">
-            <h2 class="section-title">Hakkımda</h2>
+            <h2 class="section-title reveal">Hakkımda</h2>
             <div class="row gy-4">
 
                 <!-- Hobiler -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal">
                     <div class="card h-100 p-4 border-0 hover-lift bg-light">
                         <div class="mb-3">
                             <span class="fs-1 text-warning"><i class="bi bi-controller"></i></span>
                         </div>
                         <h5 class="fw-bold text-primary">Hobiler</h5>
-                        <p class="mt-3 text-muted" style="font-size:0.95rem; line-height:1.7;">
-                            Yeni teknolojiler denemek, satranç oynamak ve bilim kurgu kitapları okumak en sevdiğim aktiviteler. Hafta sonları da doğa yürüyüşlerine çıkmayı tercih ederim.
+                        <p class="mt-3 text-muted" style="font-size:0.93rem; line-height:1.8;">
+                            Yeni teknolojiler denemek, satranç oynamak ve bilim kurgu kitapları okumak en sevdiğim aktiviteler.
+                            Hafta sonları da doğa yürüyüşlerine çıkmayı tercih ederim.
                         </p>
                     </div>
                 </div>
 
                 <!-- Etkinlikler -->
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
                     <div class="card h-100 p-4 border-0 hover-lift bg-light">
                         <div class="mb-3">
                             <span class="fs-1 text-warning"><i class="bi bi-calendar-event"></i></span>
                         </div>
                         <h5 class="fw-bold text-primary">Neler Yapıyorum?</h5>
-                        <p class="mt-3 text-muted" style="font-size:0.95rem; line-height:1.7;">
-                            Üniversite bilgisayar kulübünde aktif rol alıyorum, hackathonlara katılıyor ve açık kaynaklı yazılımlara destek sağlıyorum.
+                        <p class="mt-3 text-muted" style="font-size:0.93rem; line-height:1.8;">
+                            Üniversite bilgisayar kulübünde aktif rol alıyorum, hackathonlara katılıyor
+                            ve açık kaynaklı yazılımlara destek sağlıyorum.
                         </p>
                     </div>
                 </div>
 
                 <!-- Kişisel Bilgiler -->
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-4 col-md-12 reveal reveal-delay-2">
                     <div class="card h-100 p-4 border-0 hover-lift"
                         style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color:#fff; box-shadow: 0 10px 30px rgba(13, 59, 110, 0.3);">
                         <div class="mb-3">
                             <span class="fs-1" style="color:var(--accent)"><i class="bi bi-person-circle"></i></span>
                         </div>
-                        <h5 class="fw-bold">Kişisel Bilgiler</h5>
-                        <ul class="list-unstyled mt-3">
+                        <h5 class="fw-bold">Bilgiler</h5>
+                        <ul class="list-unstyled mt-3" style="font-size:0.93rem;">
                             <li class="mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i><strong>Memleket:</strong> İstanbul</li>
                             <li class="mb-2"><i class="bi bi-mortarboard me-2 text-warning"></i><strong>Bölüm:</strong> Bilgisayar Mühendisliği</li>
                             <li class="mb-2"><i class="bi bi-building me-2 text-warning"></i><strong>Üniversite:</strong> Teknoloji Üniversitesi</li>
@@ -125,25 +165,25 @@
     <!-- MEDYA -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="section-title text-center">Medya</h2>
+            <h2 class="section-title text-center reveal">Medya</h2>
             <div class="row gy-4">
-                <div class="col-md-6">
+                <div class="col-md-6 reveal">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=700&h=400" class="card-img-top" alt="Kodlama Ekranı">
-                        <div class="card-body">
+                        <div class="card-body p-4">
                             <h6 class="card-title fw-bold fs-5">Geliştirme Ortamı</h6>
                             <p class="card-text text-muted">Benim için ideal bir çalışma ortamı, kodlama yaparken odaklanmamı sağlayan temiz ve düzenli bir masaüstüdür.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 reveal reveal-delay-1">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden hover-lift">
                         <div class="ratio ratio-16x9">
                             <iframe src="https://www.youtube.com/embed/B-kxUMHBxNo"
                                 title="Geliştirici Tanıtım Videosu" allowfullscreen loading="lazy" style="border:none;">
                             </iframe>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body p-4">
                             <h6 class="card-title fw-bold fs-5">Neden Yazılım?</h6>
                             <p class="card-text text-muted">Teknolojinin hayatımızı nasıl değiştirdiğini ve kod yazmanın sanatsal yönünü anlatan kısa bir kesit.</p>
                         </div>
@@ -156,10 +196,10 @@
     <!-- BAĞLANTILAR -->
     <section class="py-5">
         <div class="container">
-            <h2 class="section-title text-center">Bağlantılar</h2>
+            <h2 class="section-title text-center reveal">Bağlantılar</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <div class="d-flex flex-wrap justify-content-center gap-3 reveal">
                         <a href="#" target="_blank" rel="noopener" class="btn btn-dark btn-lg px-4 rounded-pill shadow">
                             <i class="bi bi-github me-2"></i>GitHub
                         </a>
@@ -212,6 +252,11 @@
             <p class="copyright">&copy; 2026 Alex Developer &middot; Modern Web Geliştirme Portfolyosu</p>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
