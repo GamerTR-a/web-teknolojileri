@@ -193,3 +193,42 @@ function validateLogin() {
 
     return valid;
 }
+
+/* ============================================================
+   Theme Switcher
+   ============================================================ */
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+}
+
+(function initTheme() {
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    }
+})();
+
+/* ============================================================
+   Custom Cursor Glow Effect
+   ============================================================ */
+(function initCursorGlow() {
+    const glow = document.createElement('div');
+    glow.id = 'cursor-glow';
+    document.body.appendChild(glow);
+
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mousedown', () => {
+        glow.style.width = '300px';
+        glow.style.height = '300px';
+    });
+
+    document.addEventListener('mouseup', () => {
+        glow.style.width = '400px';
+        glow.style.height = '400px';
+    });
+})();

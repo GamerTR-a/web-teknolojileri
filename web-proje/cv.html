@@ -29,6 +29,16 @@
                     <li class="nav-item"><a class="nav-link" href="ilgi-alanlari.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
                     <li class="nav-item"><a class="nav-link btn-login-nav" href="login.html">Giriş Yap</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-palette-fill"></i> Tema
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="background:var(--glass-bg); backdrop-filter:blur(10px);">
+                            <li><a class="dropdown-item" href="#" onclick="setTheme('')" style="color:var(--text)"><i class="bi bi-moon-fill me-2"></i>Koyu</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setTheme('light')" style="color:var(--text)"><i class="bi bi-sun-fill me-2"></i>Açık</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setTheme('colorful')" style="color:var(--text)"><i class="bi bi-rainbow me-2"></i>Renkli</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -46,12 +56,12 @@
                         style="border-color:var(--accent) !important; width:110px; height:110px; object-fit:cover;">
                 </div>
                 <div class="col-md-10">
-                    <h1 class="fw-bold mb-1">[Ad Soyad]</h1>
-                    <p class="lead mb-2">[Bölüm] &middot; [X]. Sınıf &middot; [Üniversite]</p>
+                    <h1 class="fw-bold mb-1">Ad Soyad</h1>
+                    <p class="lead mb-2">Bilgisayar Mühendisliği &middot; B123456789</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <span><i class="bi bi-envelope me-1"></i>[eposta@ornek.com]</span>
-                        <span><i class="bi bi-geo-alt me-1"></i>[Şehir], Türkiye</span>
-                        <span><i class="bi bi-github me-1"></i>github.com/[kullanici-adi]</span>
+                        <span><i class="bi bi-envelope me-1"></i>ornek.mail@gmail.com</span>
+                        <span><i class="bi bi-geo-alt me-1"></i>Örnek Şehir, Türkiye</span>
+                        <span><i class="bi bi-github me-1"></i>github.com/abdurrahman</span>
                     </div>
                 </div>
             </div>
@@ -74,58 +84,56 @@
                             <article class="timeline-item card p-4 mb-4">
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div>
-                                        <h5 class="fw-bold text-primary mb-1">[Üniversite Adı]</h5>
-                                        <p class="mb-1 text-muted">[Bölüm] &middot; Lisans</p>
+                                        <h5 class="fw-bold text-primary mb-1">Üniversite Eğitimi</h5>
+                                        <p class="mb-1 text-muted">Bilgisayar Mühendisliği &middot; Lisans</p>
                                     </div>
-                                    <span class="badge bg-primary align-self-start px-3 py-2">20XX – Devam</span>
+                                    <span class="badge bg-primary align-self-start px-3 py-2">2025 – Devam</span>
                                 </div>
                                 <hr class="my-3">
                                 <p class="mb-0">
-                                    Üniversite eğitiminizle ilgili kısa bir bilgi yazın. Aldığınız dersler,
-                                    katıldığınız kulüpler veya projeler hakkında birkaç cümle ekleyebilirsiniz.
+                                    Bilgisayar Bilimleri ve Yazılım Mühendisliği alanında kapsamlı eğitim almaktayım.
                                 </p>
                             </article>
 
                             <article class="timeline-item card p-4 mb-4">
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div>
-                                        <h5 class="fw-bold text-primary mb-1">[Lise Adı]</h5>
-                                        <p class="mb-1 text-muted">[Bölüm] &middot; [Şehir]</p>
+                                        <h5 class="fw-bold text-primary mb-1">Gemlik Anadolu Lisesi</h5>
+                                        <p class="mb-1 text-muted">Lise Eğitimi</p>
                                     </div>
-                                    <span class="badge bg-success align-self-start px-3 py-2">20XX – 20XX</span>
+                                    <span class="badge bg-success align-self-start px-3 py-2">Mezun</span>
                                 </div>
                                 <hr class="my-3">
                                 <p class="mb-0">
-                                    Lise eğitiminizle ilgili bilgi buraya gelecek. Kulüp, başarı, etkinlik
-                                    gibi öne çıkan deneyimleri ekleyebilirsiniz.
+                                    Sayısal alanda eğitim görerek temel bilimler ve matematik becerilerimi geliştirdim.
                                 </p>
                             </article>
 
                             <article class="timeline-item card p-4 mb-4">
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div>
-                                        <h5 class="fw-bold text-primary mb-1">[Ortaokul Adı]</h5>
-                                        <p class="mb-1 text-muted">Ortaokul &middot; [Şehir]</p>
+                                        <h5 class="fw-bold text-primary mb-1">Lale Kemal Kılıç Ortaokulu</h5>
+                                        <p class="mb-1 text-muted">Ortaokul</p>
                                     </div>
-                                    <span class="badge bg-info align-self-start px-3 py-2">20XX – 20XX</span>
+                                    <span class="badge bg-info align-self-start px-3 py-2">Mezun</span>
                                 </div>
                                 <hr class="my-3">
                                 <p class="mb-0">
-                                    Ortaokul döneminde öne çıkan etkinlik veya ilgi alanlarınızı buraya yazın.
+                                    Temel eğitim ve sosyal gelişim sürecimi tamamladım.
                                 </p>
                             </article>
 
                             <article class="timeline-item card p-4">
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div>
-                                        <h5 class="fw-bold text-primary mb-1">[İlkokul Adı]</h5>
-                                        <p class="mb-1 text-muted">İlkokul &middot; [Şehir]</p>
+                                        <h5 class="fw-bold text-primary mb-1">11 Eylül İlkokulu</h5>
+                                        <p class="mb-1 text-muted">İlkokul</p>
                                     </div>
-                                    <span class="badge bg-warning text-dark align-self-start px-3 py-2">20XX – 20XX</span>
+                                    <span class="badge bg-warning text-dark align-self-start px-3 py-2">Mezun</span>
                                 </div>
                                 <hr class="my-3">
                                 <p class="mb-0">
-                                    İlkokul döneminden kısaca bahsedebilirsiniz.
+                                    İlkokul eğitim hayatımı tamamladığım okulum.
                                 </p>
                             </article>
 
@@ -244,7 +252,7 @@
             <div class="row gy-4">
                 <div class="col-md-4">
                     <h5><i class="bi bi-person-badge-fill me-2"></i>Portfolyo</h5>
-                    <p>[Üniversite]<br>[Bölüm]</p>
+                    <p>Ad Soyad<br>Bilgisayar Mühendisliği Öğrencisi</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Sayfalar</h5>
@@ -255,12 +263,12 @@
                 </div>
                 <div class="col-md-4">
                     <h5>İletişim</h5>
-                    <p><i class="bi bi-envelope me-2"></i>[eposta@ornek.com]</p>
-                    <p><i class="bi bi-geo-alt me-2"></i>[Şehir], Türkiye</p>
+                    <p><i class="bi bi-envelope me-2"></i>ornek.mail@gmail.com</p>
+                    <p><i class="bi bi-geo-alt me-2"></i>Örnek Şehir, Türkiye</p>
                 </div>
             </div>
             <hr>
-            <p class="copyright">&copy; 2026 [Ad Soyad] &middot; Web Teknolojileri Dersi Projesi</p>
+            <p class="copyright">&copy; 2026 Ad Soyad &middot; Web Teknolojileri Dersi Projesi</p>
         </div>
     </footer>
 
